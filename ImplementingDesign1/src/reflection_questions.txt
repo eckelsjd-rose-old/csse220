@@ -1,0 +1,34 @@
+Reflection Questions:
+
+1.A In your implementation could you replace Questions with Strings (yes or no)? 
+
+No. When a new question is created, it is created as a Question object (in its 
+own class) that stores a question ID and question data in its fields. A String 
+object cannot replace a Question object.
+
+1.B Why or why not? (2-3 sentences)
+
+When a new question is created, it is created as a Question object (in its 
+own class) that stores a question ID and question data in its fields. A String 
+object cannot replace a Question object, just as an "int" type cannot replace a
+"double" type, or vice versa.
+
+2.A. What data type did you use to represent the 1 to many relationship between QuizMain and Question? (provide type)
+
+I used an ArrayList of Questions to store multiple Question objects in QuizMain;
+-->  type:  ArrayList<Question>
+
+2.B. What is another type could you have used? (provide type) 
+
+A Hashmap of question ID's linked to question data would have worked as well. 
+-->  type:  HashMap<Integer, String>   (assuming the questionID is an integer).
+
+
+2.C. Would that have made the code better or worse? Why? (2-3 sentences)
+
+I think it would have made the code worse because there would be no direct way
+to pull out a Question object from the HashMap. You would have to iterate through
+the entire HashMap each time, searching for the correct questionID, and then
+returning the Question object that goes along with this ID. With an ArrayList of
+Question objects, it is much easier to pull out a question object, and then pull 
+out any information or call any methods on the Question object directly.

@@ -1,0 +1,33 @@
+Reflection Questions:
+
+1. Compare your original draft and the final draft. What is the biggest difference between the two?
+
+The biggest difference for me was the presence of certain smaller methods in each class that I had to make along the way
+in order to accomplish each handle method. The biggest example is the addQuiz method in the QuizTester class. I was having all
+kinds of problems with my original UML trying to get my QuizTester to work, when all I needed was this simple method in
+my final UML.
+
+2. What did you have to change and why did you have to change it? If not, explain how you made your decisions in designing.
+
+I did not have to make any major changes. I used all of the classes and methods I originally designed for. The main things 
+I had to change were smaller methods that I added as I went. The decisions to add these methods came about naturally as I needed them
+during implementing the code. For example, I realized during implementation that I needed a way to access quiz questions stored in the 
+Quiz Tester, so I simply added a getQuestions method to the Quiz class and called it in the QuizTester class.
+
+3. Did you re-use your code from ImplementingDesign1? How much did you have to change it if so? (If not, then please explain why)
+
+While doing the assignment, I realized how similar these classes were to the classes we made in ImplementingDesign1. However, 
+I did not reuse these classes for the sake of thoroughness. I wanted to start from scratch in this assignment to assure I was
+accounting for everything that needed to be implemented. I did reference my code in ImplementingDesign 1 to remember how I solved 
+certain issues that had come back up in this assignment. But overall, I made all the classes new so that they would fit together
+better with the new classes I had to make specifically for this assignment (like the Quiz Tester class).
+
+4. Select one or more specific design principles and discuss how they relate to the your experience in designing and implementing the code for this assignment.
+
+In implementing the code for this assignment, I was sure to follow the design principle that says classes should have one main responsibility.
+This design principle made it necessary for me to create a new class that was responsbile for testing my quizzes and questions (Quiz Tester class).
+If I were to heap all of those methods into main, I would be violating this principle by having too many functions in main.
+Another design principle states that code should not be duplicated. During implementation, I found myself having to iterate through for loops every
+time I wanted to get a Question, Quiz, or Quiz Tester object in main. In order to consolidate this code, I created methods in main to do this task,
+and then just called these methods when I wanted a particular object. There are probably still multiple places in my code where a similar consolidation
+could be implemented by writing new methods to take care of other repetitive code.

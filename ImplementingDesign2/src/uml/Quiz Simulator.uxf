@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>80</y>
+      <w>480</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>QuizSimulatorMain
+--
+
+--
+handleCommand(String command)
+handleCreateQuestion(int id, boolean answer, String prompt)
+handleGetQuestionPrompt(int questionId)
+getQuestionFromId(int questionId)
+handleCreateQuiz(int id)
+getQuizFromId(int quizId)
+handleAddQuestionToQuiz(int questionId, int quizId)
+handleUpdateQuestion(int questionId, boolean answer, String prompt)
+handleGetQuizString(int quizId)
+handleCreateQuizTester(int id, String searchString)
+getQuizTesterFromId(int quizTesterId)
+handleGetQuizTesterScoreOnQuiz(int quizTesterId, int quizId)
+handleGetQuizTesterOverallScore(int quizTesterId)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2640</x>
+      <y>100</y>
+      <w>290</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>::QuizTester
+--
+-id: int
+-searchString: String
+-quizScores: HashMap&lt;Integer, Double&gt;
+-averageScore: double
+-quizzes: ArrayList&lt;Quiz&gt;
+--
++QuizTester(int testerId, String search): ctor
++getId(): int
++getQuizzes(): ArrayList&lt;Quiz&gt;
++addQuiz(Quiz quiz): void
++takeQuiz(int quizId): void
++getScore(int quizId): double
++calculateAvergeScore(): void
++getAverageScore(): double
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>490</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Question
+--
+id
+answer
+prompt
+--
+getPrompt()
+getId()
+getAnswer()
+update(boolean answer, String prompt)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>490</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Quiz
+--
+id
+--
+addQuestion(Question question)
+getQuestions()
+getId()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>490</y>
+      <w>280</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>QuizTester
+--
+id
+searchString
+quizScores: HashMap&lt;Integer, Double&gt;
+averageScore
+--
+getId()
+getQuizzes()
+addQuiz(Quiz quiz)
+takeQuiz(int quizId)
+getScore(int quizId)
+calculateAverageScore()
+getAverageScore()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>350</y>
+      <w>40</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= *</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>350</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= *</panel_attributes>
+    <additional_attributes>10.0;140.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>350</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= *</panel_attributes>
+    <additional_attributes>140.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>530</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= *</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>540</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= *</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+</diagram>
